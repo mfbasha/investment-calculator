@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-center">Expense Tracker</h2>
+      <div class="form-inline mb-3">
+        <label for="categoryFilter" class="mr-2">Filter by Category:</label>
+        <select id="categoryFilter" class="form-control" > //[(ngModel)]="selectedCategory" (change)="filterExpenses()
+          <option value="">All</option>
+          <option *ngFor="let category of categories">{{ category }}</option>
+        </select>
+      </div>
+      <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(expense of expenses; track expense.id){
+            <tr>
+              <td>{{ expense.id }}</td>
+              <td>{{ expense.date | date: 'shortDate' }}</td>
+              <td>{{ expense.description }}</td>
+              <td>{{ expense.category }}</td>
+              <td>{{ expense.amount | currency }}</td>
+              <td>
+                <button class="btn btn-warning btn-sm mr-2" (click)="editExpense(expense)">Edit</button>
+                <button class="btn btn-danger btn-sm" (click)="deleteExpense(expense)">Delete</button>
+              </td>
+            </tr>
+          }
+
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3" class="text-right">Total:</td>
+            <td>{{ totalExpenses | currency }}</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+</div>

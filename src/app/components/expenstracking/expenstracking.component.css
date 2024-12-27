@@ -1,0 +1,11 @@
+.container {
+  padding-top: 20px;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+thead.thead-light th {
+  background-color: #f8f9fa;
+}

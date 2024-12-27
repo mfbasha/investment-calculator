@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">Add New Expense</h4>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="addExpense()">
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" class="form-control"  name="date" required [(ngModel)]="newExpense.date">
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <input type="text" id="description" class="form-control"  name="description" required [(ngModel)]="newExpense.description">
+            </div>
+            <div class="form-group">
+              <label for="category">Category</label>
+              <app-categories (selectedCategory)="setCategory($event)" ></app-categories>
+            </div>
+            <div class="form-group">
+              <label for="amount">Amount</label>
+              <input type="number" id="amount" class="form-control"  name="amount" required [(ngModel)]="newExpense.amount">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

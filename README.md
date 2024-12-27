@@ -2,6 +2,12 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
 
+## Bootstrap dependencies
+
+https://ng-bootstrap.github.io/#/home
+
+https://valor-software.com/ngx-bootstrap/#/
+
 ## Development server
 
 To start a local development server, run:

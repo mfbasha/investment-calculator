@@ -1,0 +1,13 @@
+.container {
+  padding-top: 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.lead {
+  font-size: 1.25rem;
+  color: #6c757d;
+}
